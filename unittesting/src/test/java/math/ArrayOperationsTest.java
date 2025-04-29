@@ -13,11 +13,13 @@ public class ArrayOperationsTest {
     private ArrayOperations arrayOperations;
     private FileIO fileIO;
     private MyMath myMath;
+    private String FILE_PATH;
     @Before
     public void setUp() throws Exception {
         arrayOperations = new ArrayOperations();
         fileIO = new FileIO();
         myMath = new MyMath();
+        FILE_PATH = "src/test/resources/prime_test_file.txt";
     }
 
     @After
@@ -25,12 +27,13 @@ public class ArrayOperationsTest {
         arrayOperations = null;
         fileIO = null;
         myMath = null;
+        FILE_PATH = null;
     }
 
     @Test
     public void findPrimesInFile() {
         int [] expected = {23, 42793, 19, 41, 9851, 9857};
-        int [] actual = arrayOperations.findPrimesInFile(fileIO,"D:\\Semester 6\\Testing-QA-lab\\unittesting\\src\\test\\resources\\prime_test_file.txt", myMath);
+        int [] actual = arrayOperations.findPrimesInFile(fileIO,FILE_PATH, myMath);
         assertArrayEquals(expected, actual);
     }
 }

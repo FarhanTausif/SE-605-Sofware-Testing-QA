@@ -56,6 +56,6 @@ public class ArithmeticOperationsTest {
 
     @Test (expected = IllegalArgumentException.class)
     public void test_multiply_throws_illegalArgumentException_when_product_variable_notInt() {
-        arithmeticOperations.multiply(0x7fffffff, 500000000);
+        arithmeticOperations.multiply(Integer.MAX_VALUE, 500000000);
     }
 }
