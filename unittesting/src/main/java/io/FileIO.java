@@ -44,6 +44,7 @@ public class FileIO {
 					numbersList.add(number);
 				} catch (NumberFormatException e) {
 					// Do nothing will skip the current invalid line
+					throw new NumberFormatException();
 				}
 			}
 		} catch (IOException e) {
